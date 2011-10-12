@@ -9,11 +9,11 @@ imu3000-objs := imu3000-char.o imu3000-i2c.o imu3000-irq.o
 
 else
 
-KERNELDIR ?= /lib/modules/$(shell uname -r)/build
+KERNEL_PATH ?= /lib/modules/$(shell uname -r)/build
 PWD       := $(shell pwd)
 
 modules:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+	$(MAKE) -C $(KERNEL_PATH) M=$(PWD) modules
 
 endif
 
